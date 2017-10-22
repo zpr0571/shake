@@ -1,0 +1,86 @@
+.hide{
+    display: none;
+}
+.section{
+	position: absolute;
+	top: 0;
+	left: 0; 
+	right: 0;
+	bottom: 0;
+}
+.start{
+	background: url(../img/start.png) no-repeat;
+	background-size: 100%;
+}
+.start div{
+	width: 10%;
+	position: absolute;
+	bottom: 6%;
+	left: 50%;
+	margin-left: -5%;
+}
+.start div img{
+	width: 100%;
+}
+.pot{
+	background: url(../img/bg.png) no-repeat;
+	background-size: 100%;
+}
+.pot>div:first-child{
+	width: 36%;
+	position: absolute;
+	left: 50%;
+	margin-left: -18%;
+	top: 19.5%;
+
+}
+.wave{
+	-webkit-animation: shake 1s;
+	-o-animation: shake 1s;
+	animation: shake 1s;
+}
+@keyframes shake{
+	0%, 100% {
+      -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+      -o-transform: rotate(0);
+      transform: rotate(0);
+    }
+  20%, 60% {
+    -webkit-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  40%, 80% {
+      -webkit-transform: rotate(20deg);
+      -ms-transform: rotate(20deg);
+      -o-transform: rotate(20deg);
+      transform: rotate(20deg);
+  }
+}
+.pot div img{
+	width: 100%;
+}
+.pot .pop{
+	position: absolute;
+	top: 3.5rem;
+}
+.pot .pop div{
+	position: relative;
+}
+.pot .pop a{
+	display: inline-block;
+	position: absolute;
+}
+.pot .pop .btn{
+	bottom:20%;
+	right: 15%;
+	width: 20%;
+}
+.pot .pop .share{
+	bottom:10%;
+	width: 40%;
+	left: 50%;
+	margin-left: -20%;
+}
