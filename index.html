@@ -47,15 +47,16 @@
           <a class="btn" href="https://www.baidu.com"><img src="./img/draw.png" alt=""></a>
           <a class="share"><img src="./img/share.png" alt=""></a>
         </div>
-      </div>
-      
+      </div>      
     </div>
+    <!-- 分享链接指示页 -->
+    <div class="links hide"><img src="./img/111.png" alt=""></div>
   </div>
 
   <script type="text/javascript" src="./js/jquery.min.js"></script>
   <script>
   $(document).ready(function (){
-    alert(123);
+    
     $(".start div").on("touchstart", function(e) {
 
       startX = e.originalEvent.changedTouches[0].pageX,
@@ -83,14 +84,13 @@
     
     // 摇一摇事件   
     
-    
-    if (window.DeviceMotionEvent) {
+    var time = true;//记录摇晃的次数
+
+    if (window.DeviceMotionEvent && time) {
       var speed = 25; 
       var last_update = 0;
       var x = y = z = lastX = lastY = lastZ = 0;
       
-      //记录摇了几次
-      var time = 1;
       // 监听设备运动
       window.addEventListener('devicemotion', function () {
 
@@ -101,22 +101,27 @@
         
         if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
 
-          if(state == true && curTime-last_update > 20 && time == 1){
+          if(state && curTime-last_update > 20){
 
               var diffTime = curTime -last_update;
               last_update = curTime;
               $(".pot>div:eq(0)").addClass("wave");
               $(".pop:eq("+Math.round(Math.random() * 8) % 4+")").show();
+              $(".share").click(function(){
+                $(".links").show();
+                $(".links").click(function (){
+                  $(".links").hide();
+                })
+              })
               state = false;
-              time = 2;
-           
+              time = false;          
           }             
         }
         lastX = x;
         lastY = y;
       }, false);
     }
- 
+
   })
 
   </script>
